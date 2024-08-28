@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .cart-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .cart-item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .cart-item img {
+            max-width: 100px;
+            height: auto;
+        }
+        .cart-item h2 {
+            font-size: 18px;
+            margin: 0;
+        }
+        .cart-item p {
+            margin: 5px 0;
+        }
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .quantity-controls button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .quantity-controls button:hover {
+            background-color: #0056b3;
+        }
+        .total {
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .back-button, .next-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .back-button:hover, .next-button:hover {
+            background-color: #0056b3;
+        }
+        body {
+        background-image: url('https://watermark.lovepik.com/photo/40008/0007.jpg_wh1200.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="goBack()">Back to Collection</button>
+    <h1>Shopping Cart</h1>
+    <div class="cart-container" id="cart-container">
+       
+    </div>
+    <div class="bg"></div>
+    
+    <p class="total" id="total">Total: $0.00</p>
+    
+    <button class="next-button" onclick="goToPayment()">Next</button>
+
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function updateCart() {
+            const cartContainer = document.getElementById('cart-container');
+            cartContainer.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div>
+                        <h2>${item.name}</h2>
+                        <p class="price">$${item.price.toFixed(2)}</p>
+                        <div class="quantity-controls">
+                            <button onclick="changeQuantity('${item.id}', -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="changeQuantity('${item.id}', 1)">+</button>
+                        </div>
+                        <p>Total: $${itemTotal.toFixed(2)}</p>
+                    </div>
+                `;
+                cartContainer.appendChild(cartItem);
+            });
+
+            document.getElementById('total').textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        function changeQuantity(id, change) {
+            const item = cart.find(item => item.id === id);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    const index = cart.indexOf(item);
+                    cart.splice(index, 1);
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCart();
+            }
+        }
+
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+
+        function goToPayment() {
+            if (cart.length > 0) {
+                window.location.href = 'payment.html';
+            } else {
+                alert('Your cart is empty. Please add items to the cart before proceeding.');
+            }
+        }
+
+        updateCart();
+    </script>
+</body>
+</html>

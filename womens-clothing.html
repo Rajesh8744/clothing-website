@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Dresses Collection</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .dress-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .dress {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .dress img {
+            max-width: 100%;
+            height: 300px;
+            border-radius: 5px;
+        }
+        .dress h2 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .dress p {
+            margin: 5px 0;
+        }
+        .price {
+            font-weight: bold;
+            color: #d9534f;
+        }
+        .size-select, .add-to-cart {
+            margin: 10px 0;
+        }
+        .add-to-cart button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .add-to-cart button:hover {
+            background-color: #218838;
+        }
+
+        .back-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="goHome()">Back to Home</button>
+    <h1>Women's Dresses Collection</h1>
+    <div class="dress-container">
+        <div class="dress">
+            <img src="https://pics.craiyon.com/2023-09-18/5645cee845864a6e88005714bfc56565.webp" alt="Elegant Black Dress">
+            <h2>Elegant Black Dress</h2>
+            <p class="price">$49.99</p>
+            <p>Colors: Black</p>
+            <p>Material: 100% Polyester</p>
+            <div class="size-select">
+                <label for="size-elegant-black">Size:</label>
+                <select id="size-elegant-black">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <div class="add-to-cart">
+                <button onclick="addToCart('Elegant Black Dress', 49.99, 'https://pics.craiyon.com/2023-09-18/5645cee845864a6e88005714bfc56565.webp', 'elegant-black')">Add to Cart</button>
+            </div>
+        </div>
+        <div class="dress">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2023/10/352762717/OE/IX/MF/185456460/86.jpg" alt="Floral Summer Dress">
+            <h2>Floral Summer Dress</h2>
+            <p class="price">$39.99</p>
+            <p>Colors: Blue, Red</p>
+            <p>Material: 100% Cotton</p>
+            <div class="size-select">
+                <label for="size-floral-summer">Size:</label>
+                <select id="size-floral-summer">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <div class="add-to-cart">
+                <button onclick="addToCart('Floral Summer Dress', 39.99, 'https://5.imimg.com/data5/SELLER/Default/2023/10/352762717/OE/IX/MF/185456460/86.jpg', 'floral-summer')">Add to Cart</button>
+            </div>
+        </div>
+        <div class="dress">
+            <img src="https://www.lulus.com/images/product/xlarge/11495181_2383051.jpg?w=375&hdpi=1" alt="Chic Midi Dress">
+            <h2>Chic Midi Dress</h2>
+            <p class="price">$44.99</p>
+            <p>Colors: Beige, Green</p>
+            <p>Material: 50% Rayon, 50% Nylon</p>
+            <div class="size-select">
+                <label for="size-chic-midi">Size:</label>
+                <select id="size-chic-midi">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <div class="add-to-cart">
+                <button onclick="addToCart('Chic Midi Dress', 44.99, 'https://www.lulus.com/images/product/xlarge/11495181_2383051.jpg?w=375&hdpi=1', 'chic-midi')">Add to Cart</button>
+            </div>
+        </div>
+        <div class="dress">
+            <img src="https://glaminati.com/wp-content/uploads/2023/05/casual-dress-ideas-medium-floral-print-orange.jpg" alt="Casual Day Dress">
+            <h2>Casual Day Dress</h2>
+            <p class="price">$34.99</p>
+            <p>Colors: Gray, Navy</p>
+            <p>Material: 95% Cotton, 5% Spandex</p>
+            <div class="size-select">
+                <label for="size-casual-day">Size:</label>
+                <select id="size-casual-day">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <div class="add-to-cart">
+                <button onclick="addToCart('Casual Day Dress', 34.99, 'https://glaminati.com/wp-content/uploads/2023/05/casual-dress-ideas-medium-floral-print-orange.jpg', 'casual-day')">Add to Cart</button>
+            </div>
+        </div>
+        <div class="dress">
+            <img src="https://as2.ftcdn.net/v2/jpg/01/72/83/53/1000_F_172835304_yDGPxU6rbvNbQxODx7KQjwk9OuZPt9Ui.jpg" alt="Elegant Red Dress">
+            <h2>Elegant Red Dress</h2>
+            <p class="price">$59.99</p>
+            <p>Colors: Red</p>
+            <p>Material: 100% Silk</p>
+            <div class="size-select">
+                <label for="size-elegant-red">Size:</label>
+                <select id="size-elegant-red">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <div class="add-to-cart">
+                <button onclick="addToCart('Elegant Red Dress', 59.99, 'https://as2.ftcdn.net/v2/jpg/01/72/83/53/1000_F_172835304_yDGPxU6rbvNbQxODx7KQjwk9OuZPt9Ui.jpg', 'elegant-red')">Add to Cart</button>
+            </div>
+        </div>
+        <div class="dress">
+            <img src="https://images.femmeconnection.com.au/products/jasmine-floral-boho-maxi-dress-d517732-navy-100--v1-original.jpg" alt="Boho Maxi Dress">
+            <h2>Boho Maxi Dress</h2>
+            <p class="price">$49.99</p>
+            <p>Colors: Mustard, Teal</p>
+            <p>Material: 100% Rayon</p>
+            <div class="size-select">
+                <label for="size-boho-maxi">Size:</label>
+                <select id="size-boho-maxi">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <div class="add-to-cart">
+                <button onclick="addToCart('Boho Maxi Dress', 49.99, 'https://images.femmeconnection.com.au/products/jasmine-floral-boho-maxi-dress-d517732-navy-100--v1-original.jpg', 'boho-maxi')">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="dress">
+            <img src="https://i.pinimg.com/originals/80/89/71/808971eae1587f4f36f5fad2e45a6ec7.jpg" alt="Office Wrap Dress">
+            <h2>Office Wrap Dress</h2>
+            <p class="price">$42.99</p>
+            <p>Colors: Black, Charcoal</p>
+            <p>Material: 75% Polyester, 25% Spandex</p>
+            <div class="size-select">
+                <label for="size-office-wrap">Size:</label>
+                <select id="size-office-wrap">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <div class="add-to-cart">
+                <button onclick="addToCart('Office Wrap Dress', 42.99, 'https://i.pinimg.com/originals/80/89/71/808971eae1587f4f36f5fad2e45a6ec7.jpg', 'office-wrap')">Add to Cart</button>
+            </div>
+        </div>
+        <div class="dress">
+            <img src="https://i.etsystatic.com/15214331/r/il/1c9f02/2182387767/il_570xN.2182387767_jld2.jpg" alt="Vintage Floral Dress">
+            <h2>Vintage Floral Dress</h2>
+            <p class="price">$37.99</p>
+            <p>Colors: Cream with Pink Flowers</p>
+            <p>Material: 100% Polyester</p>
+            <div class="size-select">
+                <label for="size-vintage-floral">Size:</label>
+                <select id="size-vintage-floral">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <div class="add-to-cart">
+                <button onclick="addToCart('Vintage Floral Dress', 37.99, 'https://i.etsystatic.com/15214331/r/il/1c9f02/2182387767/il_570xN.2182387767_jld2.jpg', 'vintage-floral')">Add to Cart</button>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 400px;
+            width: 100%;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-group .otp-inputs {
+            display: flex;
+            gap: 10px;
+        }
+        .form-group .otp-inputs input {
+            width: 40px;
+            text-align: center;
+        }
+        .form-group .otp-inputs input:focus {
+            outline: 2px solid #007bff;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .additional-options {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .additional-options a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .additional-options a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <div class="form-group" id="email-section">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email address">
+            <button class="button" onclick="sendOTP()">Send OTP</button>
+        </div>
+        <div class="form-group" id="otp-section" style="display: none;">
+            <label for="otp">Enter OTP</label>
+            <div class="otp-inputs" id="otp-inputs">
+                <input type="text" maxlength="1" id="otp1" oninput="moveFocus(this, 'otp2')">
+                <input type="text" maxlength="1" id="otp2" oninput="moveFocus(this, 'otp3')" onkeyup="moveFocus(this, 'otp1', 'prev')">
+                <input type="text" maxlength="1" id="otp3" oninput="moveFocus(this, 'otp4')" onkeyup="moveFocus(this, 'otp2', 'prev')">
+                <input type="text" maxlength="1" id="otp4" onkeyup="moveFocus(this, 'otp3', 'prev')">
+            </div>
+            <button class="button" onclick="verifyOTP()">Verify OTP</button>
+        </div>
+        <div class="additional-options">
+            <a href="#">Forgot Password?</a><br>
+            <a href="#">Sign Up</a>
+        </div>
+    </div>
+
+    <script>
+        const simulatedOTP = '1234';
+
+        function sendOTP() {
+            const email = document.getElementById('email').value;
+            if (email) {
+                alert('OTP sent to ' + email);
+                document.getElementById('email-section').style.display = 'none';
+                document.getElementById('otp-section').style.display = 'block';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        function verifyOTP() {
+            const otp1 = document.getElementById('otp1').value;
+            const otp2 = document.getElementById('otp2').value;
+            const otp3 = document.getElementById('otp3').value;
+            const otp4 = document.getElementById('otp4').value;
+
+            const otp = otp1 + otp2 + otp3 + otp4;
+
+            if (otp === simulatedOTP) {
+                alert('OTP verified successfully!');
+                window.location.href = 'index.html'; 
+            } else {
+                alert('Invalid OTP. Please try again.');
+            }
+        }
+
+        function moveFocus(current, nextId, direction) {
+            if (direction === 'prev') {
+                if (current.value === '' && event.key === 'Backspace') {
+                    document.getElementById(nextId).focus();
+                }
+            } else if (current.value !== '' && nextId) {
+                document.getElementById(nextId).focus();
+            }
+        }
+    </script>
+</body>
+</html>

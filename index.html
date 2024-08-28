@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Matemasie&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <style>
+
+        h1{
+            text-align: center;
+        }
+        #categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .category {
+            position: relative;
+            margin-top: 100px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .category:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        .category img {
+            width: 100%;
+            height: 200px; 
+            object-fit: cover;
+            transition: opacity 0.3s;
+        }
+
+        .category:hover img {
+            opacity: 0.8;
+        }
+
+        .category p {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            margin: 0;
+            transition: background 0.3s;
+        }
+
+        .category:hover p {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 10px;
+            font-size: large;
+            text-decoration: none;
+        }
+
+        header nav a, header nav button {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background: #333;
+            text-align: center;
+            padding: 10px;
+        }
+        .matemasie-regular {
+        font-family: "Matemasie", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+        .great-vibes-regular {
+        font-family: "Great Vibes", cursive;
+        font-weight: 400;
+        font-style: normal;
+        }
+
+
+
+
+    </style>
+</head>
+<body style="background-color: blanchedalmond;">
+    <header>
+        <nav >
+            <a  style="text-decoration:none;" href="index.html">Home</a>
+            <a  style="text-decoration:none;"href="about.html">About</a>
+            <a  style="text-decoration:none;" href="contact.html">Contact</a>
+            <a  style="text-decoration:none;" href="cart.html">Cart</a>
+
+        </nav>
+    </header>
+    <main>
+        <h1 class="matemasie-regular ">Welcome to Our Clothing Store</h1><br>
+        <h2 class="great-vibes-regular">Shop by Category</h2>
+        <section id="categories">
+            
+            <div class="category">
+                <a href="mens-clothing.html">
+                    <img src="https://i.redd.it/bi9x0l3tegra1.png" alt="Men's Clothing">
+                </a>
+                <p>Men's Clothing</p>
+            </div>
+            <div class="category">
+                <a href="womens-clothing.html">
+                    <img src="https://miro.medium.com/v2/resize:fit:1400/1*IGYSboSl0vbjg1Hiady93g.jpeg" alt="Women's Clothing">
+                </a>
+                <p>Women's Clothing</p>
+            </div>
+            <div class="category">
+                <a href="kids-clothing.html">
+                    <img src="https://www.buyandship.com.my/contents/uploads/2023/03/Top-10-Japan-Korea-Kidswear-Brands-to-Shop-in-2023.jpg" alt="Kids' Clothing">
+                </a>
+                <p>Kids' Clothing</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Clothing Store</p>
+    </footer>
+</body>
+</html>

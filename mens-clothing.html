@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Clothing Collection</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .item-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .item img {
+            max-width: 100%;
+            height: 300px;
+            border-radius: 5px;
+        }
+        .item h2 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .item p {
+            margin: 5px 0;
+        }
+        .price {
+            font-weight: bold;
+            color: #d9534f;
+        }
+        .size-select, .add-to-cart {
+            margin: 10px 0;
+        }
+        .add-to-cart button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .add-to-cart button:hover {
+            background-color: #218838;
+        }
+
+        .back-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="goHome()">Back to Home</button>
+    <h1>Men's Clothing Collection</h1>
+    <div class="item-container">
+
+<div class="item">
+    <img src="https://i.etsystatic.com/30129981/r/il/215f85/5444672508/il_794xN.5444672508_ew4x.jpg" alt="Classic Black Suit">
+    <h2>Classic Black Suit</h2>
+    <p class="price">$149.99</p>
+    <p>Colors: Black</p>
+    <p>Material: 100% Wool</p>
+    <div class="size-select">
+        <label for="size-classic-black">Size:</label>
+        <select id="size-classic-black">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+        </select>
+    </div>
+    <div class="add-to-cart">
+        <button onclick="addToCart('Classic Black Suit', 149.99, 'https://i.etsystatic.com/30129981/r/il/215f85/5444672508/il_794xN.5444672508_ew4x.jpg', 'classic-black-suit')">Add to Cart</button>
+    </div>
+</div>
+
+
+<div class="item">
+    <img src="https://www.jiomart.com/images/product/original/rvyjua9a82/ubic-men-s-casual-chino-pants-stylish-regular-fit-comfortable-trousers-ideal-for-everyday-wear-black-size-32-product-images-rvyjua9a82-0-202306250854.jpg?im=Resize=(500,630)" alt="Casual Chino Pants">
+    <h2>Casual Chino Pants</h2>
+    <p class="price">$39.99</p>
+    <p>Colors: Khaki, Navy</p>
+    <p>Material: 98% Cotton, 2% Spandex</p>
+    <div class="size-select">
+        <label for="size-casual-chino">Size:</label>
+        <select id="size-casual-chino">
+            <option value="30">30</option>
+            <option value="32">32</option>
+            <option value="34">34</option>
+            <option value="36">36</option>
+        </select>
+    </div>
+    <div class="add-to-cart">
+        <button onclick="addToCart('Casual Chino Pants', 39.99, 'https://www.jiomart.com/images/product/original/rvyjua9a82/ubic-men-s-casual-chino-pants-stylish-regular-fit-comfortable-trousers-ideal-for-everyday-wear-black-size-32-product-images-rvyjua9a82-0-202306250854.jpg?im=Resize=(500,630)', 'casual-chino-pants')">Add to Cart</button>
+    </div>
+</div>
+
+<div class="item">
+    <img src="https://www.triumph-sports.com/wp-content/uploads/2024/04/xJKD033-1-300x300.jpg.pagespeed.ic.q25oPJOPYf.jpg" alt="Sports Jacket">
+    <h2>Sports Jacket</h2>
+    <p class="price">$59.99</p>
+    <p>Colors: Grey, Blue</p>
+    <p>Material: 85% Polyester, 15% Nylon</p>
+    <div class="size-select">
+        <label for="size-sports-jacket">Size:</label>
+        <select id="size-sports-jacket">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+        </select>
+    </div>
+    <div class="add-to-cart">
+        <button onclick="addToCart('Sports Jacket', 59.99, 'https://www.triumph-sports.com/wp-content/uploads/2024/04/xJKD033-1-300x300.jpg.pagespeed.ic.q25oPJOPYf.jpg', 'sports-jacket')">Add to Cart</button>
+    </div>
+</div>
+
+<div class="item">
+    <img src="https://5.imimg.com/data5/SELLER/Default/2023/4/297587695/OJ/IN/TP/6069941/men-denim-jeans-500x500.jpg" alt="Denim Jeans">
+    <h2>Denim Jeans</h2>
+    <p class="price">$44.99</p>
+    <p>Colors: Blue, Black</p>
+    <p>Material: 100% Denim</p>
+    <div class="size-select">
+        <label for="size-denim-jeans">Size:</label>
+        <select id="size-denim-jeans">
+            <option value="30">30</option>
+            <option value="32">32</option>
+            <option value="34">34</option>
+            <option value="36">36</option>
+        </select>
+    </div>
+    <div class="add-to-cart">
+        <button onclick="addToCart('Denim Jeans', 44.99, 'https://5.imimg.com/data5/SELLER/Default/2023/4/297587695/OJ/IN/TP/6069941/men-denim-jeans-500x500.jpg', 'denim-jeans')">Add to Cart</button>
+    </div>
+</div>
+
+
+<div class="item">
+    <img src="https://i.pinimg.com/736x/74/26/ab/7426abe5eb2fdf40432a7c082d335b85.jpg" alt="Graphic T-Shirt">
+    <h2>Graphic T-Shirt</h2>
+    <p class="price">$24.99</p>
+    <p>Colors: White, Black</p>
+    <p>Material: 100% Cotton</p>
+    <div class="size-select">
+        <label for="size-graphic-tshirt">Size:</label>
+        <select id="size-graphic-tshirt">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+        </select>
+    </div>
+    <div class="add-to-cart">
+        <button onclick="addToCart('Graphic T-Shirt', 24.99, 'https://i.pinimg.com/736x/74/26/ab/7426abe5eb2fdf40432a7c082d335b85.jpg', 'graphic-tshirt')">Add to Cart</button>
+    </div>
+</div>
+
+<div class="item">
+    <img src="https://tiimg.tistatic.com/fp/1/005/658/genuine-leather-mens-belt-752.jpg" alt="Leather Belt">
+    <h2>Leather Belt</h2>
+    <p class="price">$29.99</p>
+    <p>Colors: Black, Brown</p>
+    <p>Material: Leather</p>
+    <div class="size-select">
+        <label for="size-leather-belt">Size:</label>
+        <select id="size-leather-belt">
+            <option value="30">30</option>
+            <option value="32">32</option>
+            <option value="34">34</option>
+            <option value="36">36</option>
+        </select>
+    </div>
+    <div class="add-to-cart">
+        <button onclick="addToCart('Leather Belt', 29.99, 'https://tiimg.tistatic.com/fp/1/005/658/genuine-leather-mens-belt-752.jpg', 'leather-belt')">Add to Cart</button>
+    </div>
+</div>
+
+<div class="item">
+    <img src="https://blackberrys.com/cdn/shop/files/formal-shirt-in-black-dawn-blackberrys-clothing-1.jpg?v=1685950192" alt="Formal Shirt">
+    <h2>Formal Shirt</h2>
+    <p class="price">$34.99</p>
+    <p>Colors: White, Light Blue</p>
+    <p>Material: 100% Cotton</p>
+    <div class="size-select">
+        <label for="size-formal-shirt">Size:</label>
+        <select id="size-formal-shirt">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+        </select>
+    </div>
+    <div class="add-to-cart">
+        <button onclick="addToCart('Formal Shirt', 34.99, 'https://blackberrys.com/cdn/shop/files/formal-shirt-in-black-dawn-blackberrys-clothing-1.jpg?v=1685950192', 'formal-shirt')">Add to Cart</button>
+    </div>
+</div>
+
+<div class="item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRddlQ4QHQpdAtRNvzSDTxCAuRrXGlWcEA34kyXAvqAkVghuazvRxhRuBiilTvAGfvouEs&usqp=CAU" alt="Summer Shorts">
+    <h2>Summer Shorts</h2>
+    <p class="price">$29.99</p>
+    <p>Colors: Light Grey, Navy</p>
+    <p>Material: 95% Cotton, 5% Elastane</p>
+    <div class="size-select">
+        <label for="size-summer-shorts">Size:</label>
+        <select id="size-summer-shorts">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+        </select>
+    </div>
+    <div class="add-to-cart">
+        <button onclick="addToCart('Summer Shorts', 29.99, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRddlQ4QHQpdAtRNvzSDTxCAuRrXGlWcEA34kyXAvqAkVghuazvRxhRuBiilTvAGfvouEs&usqp=CAU', 'summer-shorts')">Add to Cart</button>
+    </div>
+</div>
+
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
+</body>
+</html>
+
+
+
+
+
+
+
